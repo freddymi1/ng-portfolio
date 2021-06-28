@@ -1,0 +1,31 @@
+.container{
+    padding: 20px;
+    ._diversTitle{
+        padding-bottom: 25px;
+        font-size: 1.4rem;
+        color: rgb(83, 83, 83);
+        font-weight: 600;
+    }
+}
+
+.aboutContent{
+    padding: 30px 0;
+    .mat-form-field {
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        width: 100%;
+    }
+}
+.aboutSkill{
+    padding: 30px 0;
+    .mat-form-field {
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        width: 100%;
+    }
+}
+.btnGp{
+    justify-content: space-between;
+}

@@ -1,0 +1,92 @@
+.logo{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    span{
+        font-size: 2rem;
+        letter-spacing:2px;
+        font-weight: 600;
+    }
+}
+
+mat-nav-list{
+    color: #fff;
+    padding: 0;
+    font-weight: 500;
+    letter-spacing: 2px;
+    mat-list-item{
+        padding: 0;
+        color: #fff;
+        a{
+            display: flex;
+            align-items: center;
+        }
+        .iconBox{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(3, 113, 121, 0.384);
+            align-items: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all .3s ease;
+        }
+    }
+    mat-list-item:hover{
+        
+        .iconBox{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(247, 247, 247, 0.384);
+            align-items: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-right: 10px;
+        }
+    }
+    mat-divider{
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.267);
+    }
+}
+
+.navbar{
+    color: #fff;
+    justify-content: space-between;
+    background: #f8f8f8;
+    .btnNav {
+        align-items: center;
+        justify-content: center;
+        .toggleIcon{
+            color: #026677;
+            font-size: 2rem;
+            margin-top: -10px;
+        }
+    }
+    .iconBox1{
+        width: 40px;
+        height: 40px;
+        background: #026677;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .userIcon{
+        color: #ededee;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}
+.navbar span{
+    margin-right: 2rem;
+}
+.navbar span::last-child{
+    margin-right: 0rem;
+}
+

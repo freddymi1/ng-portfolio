@@ -1,0 +1,19 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" [(opened)]="opened">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+        <mat-toolbar class="navbar">
+            <button mat-button (click)="opened =! opened" class="btnNav">
+                <mat-icon class="toggleIcon">list</mat-icon>
+            </button>
+            <div>
+              <div class="iconBox1">
+                <mat-icon class="userIcon">logout</mat-icon>
+              </div>
+            </div>
+          </mat-toolbar>
+          <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

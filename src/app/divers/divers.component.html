@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="_diversTitle">
+        Divers page
+    </div>
+    <mat-card>
+        <mat-horizontal-stepper linear>
+            <mat-step label="A propos" completed="true" optional>
+                
+                <div class="aboutContent">
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>A propos de vous</mat-label>
+                        <input type="text" matInput [(ngModel)]="about" max="100">
+                        <mat-hint align="end">Max 10o mots</mat-hint>
+                      </mat-form-field>
+                </div>
+                <div>
+                    <button mat-raised-button matStepperNext>Suivant</button>
+                </div>
+            </mat-step>
+            <mat-step label="Compétences" completed="true">
+                <div class="aboutSkill">
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>Vos competences</mat-label>
+                        <input type="text" matInput [(ngModel)]="skills" required>
+                        <mat-hint align="end">Max 10o mots</mat-hint>
+                      </mat-form-field>
+                </div>
+                <div class="btnGp">
+                    <button mat-raised-button matStepperPrevious>Precedent</button>
+                    <button mat-raised-button matStepperNext>Suivant</button>
+                </div>
+            </mat-step>
+            <mat-step label="Divertissements" completed="true">
+                Step 333
+                <div>
+                    <button mat-raised-button matStepperPrevious>Back</button>
+                    <button mat-raised-button>Done</button>
+                </div>
+            </mat-step>
+            <mat-step label="Step 3" completed="true">
+                Step 333
+                <div>
+                    <button mat-raised-button matStepperPrevious>Back</button>
+                    <button mat-raised-button>Done</button>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </mat-card>
+</div>

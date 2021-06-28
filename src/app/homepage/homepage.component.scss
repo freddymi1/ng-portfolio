@@ -1,0 +1,72 @@
+.container{
+    padding: 20px;
+    ._homeTitle{
+        padding-bottom: 25px;
+        font-size: 1.4rem;
+        color: rgb(83, 83, 83);
+        font-weight: 600;
+    }
+}
+._homeWrapper{
+    display: flex;
+    width: 100%;
+    .profileCard{
+        width: 40%;
+        margin-right: 10px;
+        .profileImg{
+            width: 100%;
+            img{
+                width: 30%;
+                border-radius: 10px;
+            }
+        }
+        .profileContent{
+            padding: 10px 0;
+            .mat-title{
+                font-size: 1rem;
+                color: rgb(6, 107, 133);
+                font-weight: 600;
+            }
+            mat-list-item{
+                display: flex;
+                mat-icon{
+                    margin-left: 0px;
+                    margin-right: 10px;
+                    color: rgb(6, 107, 133);
+                }
+                mat-label{
+                    font-size: 0.8rem;
+                    color: rgb(83, 83, 83);
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+    .otherCard{
+        width: 60%;
+        margin-left: 10px;
+        .mat-form-field {
+            display: inline-block;
+            position: relative;
+            text-align: left;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and(max-width: 768px) {
+    ._homeWrapper{
+        display: block;
+        width: 100%;
+        .profileCard{
+            width: 100%;
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+        .otherCard{
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 0;
+        }
+    }
+}

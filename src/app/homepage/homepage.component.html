@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="_homeTitle">
+        Accueil
+    </div>
+    <div class="_homeWrapper">
+        <div class="profileCard">
+            <mat-card>
+                <div class="profileImg">
+                    <img src="assets/images/pi.jpg" class="candidatP" alt="Candidat profile">
+                </div>
+                <div class="profileContent">
+                    <div class="mat-title">Informations</div>
+                    <mat-nav-list>
+                        <mat-divider></mat-divider>
+
+                        <mat-list-item>
+                            <mat-icon matListIcon class="sideIcon">people</mat-icon>
+                            <mat-label>{{name}}</mat-label>
+                        </mat-list-item>
+
+                        <mat-divider></mat-divider>
+
+                        <mat-list-item>
+                            <mat-icon matListIcon class="sideIcon">map</mat-icon>
+                            <mat-label>{{adresse}}</mat-label>
+                        </mat-list-item>
+                        
+                        <mat-divider></mat-divider>
+
+                        <mat-list-item>
+                            <mat-icon matListIcon class="sideIcon">email</mat-icon>
+                            <mat-label>{{email}}</mat-label>
+                        </mat-list-item>
+
+
+                        <mat-divider></mat-divider>
+
+                        <mat-list-item>
+                            <mat-icon matListIcon class="sideIcon">book</mat-icon>
+                            <mat-label>{{dateNaiss}}</mat-label>
+                        </mat-list-item>
+
+
+                        <mat-divider></mat-divider>
+
+                        <mat-list-item>
+                            <mat-icon matListIcon class="sideIcon">phone</mat-icon>
+                            <mat-label>{{phone}}</mat-label>
+                        </mat-list-item>
+
+                        <mat-divider></mat-divider>
+
+                    </mat-nav-list>
+                    
+                </div>
+            </mat-card>
+        </div>
+        <div class="otherCard">
+            <mat-card>
+                <div>
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>Nom et prenoms</mat-label>
+                        <input type="text" matInput [(ngModel)]="name" required>
+                        <mat-hint align="end">Min 6 caracteres</mat-hint>
+                      </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>Adresse</mat-label>
+                        <input type="text" matInput [(ngModel)]="adresse" required>
+                        <mat-hint align="end">Min 6 caracteres</mat-hint>
+                      </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>Adresse email</mat-label>
+                        <input type="email" matInput [(ngModel)]="email" required>
+                        <mat-hint align="end">Min 6 caracteres</mat-hint>
+                      </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <input type="text" [(ngModel)]="dateNaiss" matInput [matDatepicker]="myDatepicker">
+                        <mat-datepicker-toggle [for]="myDatepicker" matSuffix></mat-datepicker-toggle>
+                        <mat-datepicker #myDatepicker></mat-datepicker>
+                        <mat-hint align="end">Date de naissance</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field floatLabel="auto" appearance="outline">
+                        <mat-label>Contact</mat-label>
+                        <input type="text" matInput [(ngModel)]="phone" required>
+                        <mat-hint align="end">Min 10 nombres</mat-hint>
+                      </mat-form-field>
+                </div>
+                <mat-card-actions align="end">
+                    <button mat-raised-button>Valider</button>
+                </mat-card-actions>
+                <!-- <app-info></app-info> -->
+            </mat-card>
+        </div>
+    </div>
+</div>
