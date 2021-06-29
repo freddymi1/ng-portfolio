@@ -3,7 +3,7 @@ import { DiversComponent } from "./divers/divers.component"
 import { HomepageComponent } from "./homepage/homepage.component"
 
 const app_routing: Routes = [
-    {path: 'home', component: HomepageComponent},
+    {path: '', component: HomepageComponent},
     {path: 'divers', component: DiversComponent}
 ]
 

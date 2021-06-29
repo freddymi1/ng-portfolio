@@ -57,45 +57,47 @@
         </div>
         <div class="otherCard">
             <mat-card>
-                <div>
-                    <mat-form-field floatLabel="auto" appearance="outline">
-                        <mat-label>Nom et prenoms</mat-label>
-                        <input type="text" matInput [(ngModel)]="name" required>
-                        <mat-hint align="end">Min 6 caracteres</mat-hint>
-                      </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field floatLabel="auto" appearance="outline">
-                        <mat-label>Adresse</mat-label>
-                        <input type="text" matInput [(ngModel)]="adresse" required>
-                        <mat-hint align="end">Min 6 caracteres</mat-hint>
-                      </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field floatLabel="auto" appearance="outline">
-                        <mat-label>Adresse email</mat-label>
-                        <input type="email" matInput [(ngModel)]="email" required>
-                        <mat-hint align="end">Min 6 caracteres</mat-hint>
-                      </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field floatLabel="auto" appearance="outline">
-                        <input type="text" [(ngModel)]="dateNaiss" matInput [matDatepicker]="myDatepicker">
-                        <mat-datepicker-toggle [for]="myDatepicker" matSuffix></mat-datepicker-toggle>
-                        <mat-datepicker #myDatepicker></mat-datepicker>
-                        <mat-hint align="end">Date de naissance</mat-hint>
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field floatLabel="auto" appearance="outline">
-                        <mat-label>Contact</mat-label>
-                        <input type="text" matInput [(ngModel)]="phone" required>
-                        <mat-hint align="end">Min 10 nombres</mat-hint>
-                      </mat-form-field>
-                </div>
-                <mat-card-actions align="end">
-                    <button mat-raised-button>Valider</button>
-                </mat-card-actions>
+                <form [formGroup]="service.form">
+                    <div>
+                        <mat-form-field appearance='outline'>
+                            <mat-label>Nom et prenoms</mat-label>
+                            <input formControlName="fullname" type="text" matInput required>
+                            <mat-error *ngIf="service.form.controls['fullname'].errors?.required" align="end">Cette champs est obligatoire!</mat-error>
+                            <mat-error *ngIf="service.form.controls['fullname'].errors?.minlength" align="end">Entrer 4 caracteres minimum!</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance='outline'>
+                            <mat-label>Adresse</mat-label>
+                            <input formControlName="adress" type="text" matInput required>
+                            <mat-error align="end">Cette champs est obligatoire!</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance='outline'>
+                            <mat-label>Adresse email</mat-label>
+                            <input formControlName="email" type="email" matInput required>
+                            <mat-error *ngIf="service.form.controls['email'].errors?.required" align="end">Cette champs est obligatoire!</mat-error>
+                            <mat-error *ngIf="service.form.controls['email'].errors?.email" align="end">Adresse email invalide!</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance='outline'>
+                            <input formControlName="birthDay" placeholder="Date de naissance" type="text" matInput [matDatepicker]="myDatepicker">
+                            <mat-datepicker-toggle [for]="myDatepicker" matSuffix></mat-datepicker-toggle>
+                            <mat-datepicker #myDatepicker></mat-datepicker>
+                            <mat-error align="end">Cette champs est obligatoire!</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance='outline'>
+                            <mat-label>Contact</mat-label>
+                            <input type="text" formControlName="mobile" matInput required>
+                            <mat-error *ngIf="service.form.controls['mobile'].errors?.required" align="end">Cette champs est obligatoire!</mat-error>
+                            <mat-error *ngIf="service.form.controls['mobile'].errors?.minlength" align="end">Entrer 10 nombres minimum!</mat-error>
+                        </mat-form-field>
+                        <mat-radio-group formControlName="gender">
+                            <mat-radio-button color="primary" value="1">Homme</mat-radio-button>
+                            <mat-radio-button color="accent" value="2">Femme</mat-radio-button>
+                            <mat-radio-button color="warn" value="3">Autre</mat-radio-button>
+                        </mat-radio-group>
+                        <mat-card-actions align="end">
+                            <button mat-raised-button color="primary" [disabled]="service.form.invalid" type="submit">Valider</button>
+                        </mat-card-actions>
+                    </div>
+                </form>
                 <!-- <app-info></app-info> -->
             </mat-card>
         </div>

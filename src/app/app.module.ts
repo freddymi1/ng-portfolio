@@ -11,7 +11,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { DiversComponent } from './divers/divers.component';
 import { AppRoutes } from './app-routing';
 import { InfoComponent } from './homepage/info/info.component';
-
+import { CandidatService } from './shared/candidat.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { InfoComponent } from './homepage/info/info.component';
     ReactiveFormsModule,
     AppRoutes
   ],
-  providers: [],
+  providers: [CandidatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

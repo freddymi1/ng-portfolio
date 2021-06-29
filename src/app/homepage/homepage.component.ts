@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CandidatService } from '../shared/candidat.service';
 
 @Component({
   selector: 'app-homepage',
@@ -9,9 +10,9 @@ export class HomepageComponent implements OnInit {
   name = "";
   adresse = "";
   email = "";
-  dateNaiss = new Date()
-  phone = ""
-  constructor() { }
+  dateNaiss = "";
+  phone = "";
+  constructor(public service: CandidatService) { }
 
   ngOnInit(): void {
   }
